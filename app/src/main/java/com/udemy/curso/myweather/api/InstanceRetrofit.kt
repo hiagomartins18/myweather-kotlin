@@ -7,11 +7,11 @@ object InstanceRetrofit {
 
     private const val baseUrl = "https://api.weatherapi.com"
 
-    private fun getInstance(): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
+    val api: WeatherApi by lazy {
+        Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create()) //GSON -> Serializador para converter objeto -> json e vice versa
             .build()
+            .create(WeatherApi::class.java)
     }
-
-    val weatherApi: WeatherApi = getInstance().create(WeatherApi::class.java)
 }

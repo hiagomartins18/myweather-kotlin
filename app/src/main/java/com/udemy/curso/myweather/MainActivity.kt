@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val weatherViewModel = ViewModelProvider(this)[WeatherViewModel::class.java]
+        val weatherViewModel = ViewModelProvider(this)[WeatherViewModel::class.java] // Nossa principal Activity onde setamos o Provider da Viewmodel.
 
         setContent {
             MyweatherTheme {

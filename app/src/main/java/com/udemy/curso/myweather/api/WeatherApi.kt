@@ -9,5 +9,5 @@ interface WeatherApi {
     suspend fun getWeather(
         @Query("key") apiKey:String,
         @Query("q") city: String
-    ) : Response<WeatherModel>
-}
+    ) : Response<WeatherModel>  // Aqui criamos uma interface que irá colocar os endpoints necessários pela API, as querys, a rota que será consumida
+}                               // E estabelecemos o Model que queremos de retorno.
